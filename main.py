@@ -32,8 +32,8 @@ async def main():
     dp = Dispatcher()
 
     # Register routers en dispatcher
-    dp.include_router(other_router)
     dp.include_router(user_router)
+    dp.include_router(other_router)
 
     # Skip old updates and run polling
     await bot.delete_webhook(drop_pending_updates=True)
