@@ -23,9 +23,9 @@ def game_request_keyboard() -> ReplyKeyboardMarkup:
 def choices_keyboard() -> ReplyKeyboardMarkup:
     """Create the choices keyboard with three buttons."""
 
-    rock_btn = KeyboardButton(text=LEXICON_RU['rock'])
-    paper_btn = KeyboardButton(text=LEXICON_RU['paper'])
-    scissors_btn = KeyboardButton(text=LEXICON_RU['scissors'])
+    rock_btn = KeyboardButton(text=LEXICON_RU['choices']['rock'])
+    paper_btn = KeyboardButton(text=LEXICON_RU['choices']['paper'])
+    scissors_btn = KeyboardButton(text=LEXICON_RU['choices']['scissors'])
 
     keyboard = ReplyKeyboardMarkup(
         keyboard=[[rock_btn], [paper_btn], [scissors_btn]],
