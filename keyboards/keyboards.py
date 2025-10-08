@@ -14,7 +14,10 @@ def game_request_keyboard() -> ReplyKeyboardMarkup:
 
     builder = ReplyKeyboardBuilder()
     builder.row(yes_btn, no_btn, width=2)
-    keyboard: ReplyKeyboardMarkup = builder.as_markup(resize_keyboard=True)
+    keyboard: ReplyKeyboardMarkup = builder.as_markup(
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
 
     return keyboard
 

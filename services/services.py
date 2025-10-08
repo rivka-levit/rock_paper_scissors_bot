@@ -8,7 +8,7 @@ from lexicon import LEXICON_RU
 
 
 def get_bot_choice() -> str:
-    return random.choice(LEXICON_RU['choices'].keys())
+    return random.choice(list(LEXICON_RU['choices'].keys()))
 
 
 def _normalize_user_answer(user_answer: str) -> str | None:
