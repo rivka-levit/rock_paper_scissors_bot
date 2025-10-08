@@ -10,7 +10,7 @@ from config import Config, load_config
 from handlers.other import router as other_router
 from handlers.user import router as user_router
 
-from keyboards.main_menu import get_menu_commands
+from keyboards.main_menu import set_main_menu
 
 logger = logging.getLogger(__name__)
 
@@ -41,7 +41,7 @@ async def main():
 
     # Set up maim menu
     logger.info('Setting up main menu commands...')
-    await bot.set_my_commands(get_menu_commands())
+    await set_main_menu(bot=bot)
 
     # Skip old updates and run polling
     await bot.delete_webhook(drop_pending_updates=True)

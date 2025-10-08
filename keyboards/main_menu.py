@@ -1,5 +1,6 @@
 import logging
 
+from aiogram import Bot
 from aiogram.types import BotCommand
 
 from lexicon import LEXICON_RU
@@ -7,9 +8,11 @@ from lexicon import LEXICON_RU
 logger = logging.getLogger(__name__)
 
 
-def get_menu_commands() -> list[BotCommand]:
+async def set_main_menu(bot: Bot) -> None:
     menu_commands = [
-        BotCommand(command=cm, description=descr) for cm, descr in
-        LEXICON_RU['commands'].items()
+        BotCommand(
+            command=cm,
+            description=descr
+        ) for cm, descr in LEXICON_RU['commands'].items()
     ]
-    return menu_commands
+    await bot.set_my_commands(menu_commands)
