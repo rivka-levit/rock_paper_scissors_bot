@@ -1,3 +1,5 @@
+import asyncio
+
 from aiogram import Router, F
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
@@ -52,6 +54,8 @@ async def process_game_button(message: Message):
 
     winner = get_winner(user_choice=message.text, bot_choice=bot_choice)
     effect_id = '5046509860389126442' if winner == 'user_won' else None
+
+    await asyncio.sleep(1)
 
     await message.answer(
         text=LEXICON_RU[winner],
