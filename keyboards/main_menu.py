@@ -1,7 +1,7 @@
 import logging
 
 from aiogram import Bot
-from aiogram.types import BotCommand
+from aiogram.types import BotCommand, BotCommandScopeDefault
 
 from lexicon import LEXICON_RU
 
@@ -15,4 +15,7 @@ async def set_main_menu(bot: Bot) -> None:
             description=descr
         ) for cm, descr in LEXICON_RU['commands'].items()
     ]
-    await bot.set_my_commands(menu_commands)
+    await bot.set_my_commands(
+        commands=menu_commands,
+        scope=BotCommandScopeDefault()
+    )
